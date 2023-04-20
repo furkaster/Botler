@@ -64,8 +64,3 @@ async def on_member_join(member):
        )
        embed.add_field(name="",value="Привет! Что бы играть на приватном сервере, тебе надо отправить заявку в [канал](https://discord.com/channels/917392869201961010/1061917311818289172) и ждать ответа.",inline=False)
        await member.send(embed=embed)
-           
-#@bot.event 
-#async def on_message(message): 
-#    if 'discord.gg' in message.content: 
-#        await message.delete() 
