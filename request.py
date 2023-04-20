@@ -11,7 +11,6 @@ int_user = ''
 
 class Validation_Button(discord.ui.View):
     def __init__(self):
-#        self.author = author
         super().__init__(timeout=None)
 
     @discord.ui.button(label="Принять", style=discord.ButtonStyle.success,
@@ -24,18 +23,8 @@ class Validation_Button(discord.ui.View):
        #print(str(modal.children[0].value))
     #print(str(discord.Message.embeds[0].fields[0].name.lower()))
 
-#       for embed in embed_content_in_dict:
        #print(discord.Message.embeds.item[0])
        #embed.set_footer(text="---------------------------")
-#       for field in embed.fields: # Dynamically get the user id field.
-#           print(embeds[0].fields.field.name)
-#           if field.name.lower() == "Немного о себе":
-#               user_id_field = field
-#               break
-#       else: # In case the field isn't found
-#           pass # Put some code here
-#       user_id = int(user_id_field.value) # Get the value of the field
-#       await interaction.response.send_message(user_id, ephemeral=True)
        #print(dir(self.message.embeds[0].footer))
        #print(str(self.message.embeds[0].footer.text))
        #for member in self.message.guild.fetch_members(limit=150):
@@ -99,7 +88,6 @@ class Validation_Button(discord.ui.View):
        #print(userid)
        for child in self.children:
            child.disabled = True
-#       button.disabled = True
        #print(embeds[0].fields.field.name)
        button.style = discord.ButtonStyle.gray
        #await interaction.response.edit_message(view=self)
@@ -200,29 +188,9 @@ class Input_Request(discord.ui.Modal):
         admin = bot.bot.get_user(OWNER_ID)
         await admin.send('Новая заявка!')
 
-        #user = await bot.fetch_user(int(interaction.user.id))
-        #embed1 = discord.Embed(
-        #title = '**Приватный сервер Almari**',
-        #description = '*Оповещение о статусе заявки*'
-        #)
-        #embed1.add_field(name="Статус: ", value="На рассмотрении. Если владелец в сети и не занят, то рассмотрение происходит быстро.", inline=False)
-        #await user.send(embed=embed1)
-
         await interaction.response.send_message(content="Заявка ушла на рассмот"\
         "рение. Если владелец в сети и не занят, то рассмотрение происходит быс"\
         "тро. Ответ придет в ЛС.", ephemeral=True)
-
-
-        #admin = await bot.fetch_user('308537160124989440')
-        #await admin.send('Новая заявка!')
-
-        #await interaction.response.send_message(embeds=[embed],view=Buttons())
-        #user = await bot.fetch_user("308537160124989440")
-        #await user.send(embeds=[embed],view=Buttons())
-
-
-
-
 
 class Request_Button(discord.ui.View):
     def __init__(self):
@@ -235,7 +203,6 @@ class Request_Button(discord.ui.View):
     async def grey(self, button: discord.ui.Button,
     interaction: discord.Interaction):
 
-        # await interaction.response.send_message("This is grey.", ephemeral=True)
         await interaction.response.send_modal(Input_Request(title="Проходка на сервер",timeout=None))
 
 
